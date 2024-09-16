@@ -1,4 +1,5 @@
 import React from "react";
+import "./header.css";
 import NavListItem from "../components/NavListItem";
 import navListData from "../data/navListData";
 
