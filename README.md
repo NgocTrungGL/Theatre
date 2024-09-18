@@ -13,7 +13,7 @@ Trung: Fetch Data from Mock API(1:20) timeline: 4days
 Phước: Fetch Data from Mock API(1:20->Hết) timeline: 4days
 Nhật: Banner Carousel Slider timeline: 4days
 
-Deadline: 28/09 
+Deadline: 25/09 
 
 Install Boottrap and Swiper: 
 
