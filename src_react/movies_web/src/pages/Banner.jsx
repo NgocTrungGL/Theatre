@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./banner.css";
 import bgImg from "../img/bg-transformer.jpg";
+import MovieContent from "../components/MovieContent";
+import MovieDate from "../components/MovieDate";
+import PlayBtn from "../components/PlayBtn";
+
 function Banner() {
     const [movies, setMovies] = useState([]);
     const fetchData = () => {
@@ -19,31 +23,12 @@ function Banner() {
                 <div className="container-fluid">
                     <div className="row">
                         <div className="col-lg-6 col-md-12">
-                            <div className="content">
-                                <img
-                                    src=""
-                                    alt="Movie-title"
-                                    className="movie-title"
-                                />
-                                <h4>
-                                    <span>Year</span>
-                                    <span>
-                                        <i>age</i>
-                                    </span>
-                                    <span>length</span>
-                                    <span>category</span>
-                                </h4>
-                                <p>
-                                    Lorem ipsum, dolor sit amet consectetur
-                                    adipisicing elit. At minus reprehenderit
-                                    nostrum. Iusto soluta quidem veritatis,
-                                    optio, reprehenderit fugiat ratione
-                                    cupiditate, molestias impedit quasi maiores.
-                                </p>
-                                <div className="button">Button</div>
-                            </div>
+                            <MovieContent/>
                         </div>
-                        <div className="col-lg-6 col-md-12"></div>
+                        <div className="col-lg-6 col-md-12">
+                            <MovieDate/>
+                            <PlayBtn/>
+                        </div>
                     </div>
                 </div>
             </div>

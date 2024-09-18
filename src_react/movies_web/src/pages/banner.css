@@ -51,3 +51,50 @@
     visibility: visible;
     opacity: 1;
 }
+
+.banner .playBtn {
+    position: relative;
+    color: #ffffff;
+    width: 80px;
+    height: 80px;
+    transition: 1s;
+    z-index: 1000;
+    background: transparent;
+    backdrop-filter: blur(20px);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer !important;
+}
+
+.banner .playBtn ion-icon {
+    font-size: 4rem;
+    color: var(--primary);
+    cursor: pointer;
+}
+
+.banner .playBtn::before {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    content: '';
+    background: transparent;
+    border: 10px solid #ffffff;
+    border-radius: 50%;
+    animation: button 1s linear infinite;
+}
+
+@keyframes button {
+    0%,
+    100% {
+        opacity: 0.3;
+        filter: blur(0.4px);
+    }
+    50% {
+        opacity: 1;
+        filter: blur(10px);
+    }
+}
