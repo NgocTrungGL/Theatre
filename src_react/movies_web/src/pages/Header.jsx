@@ -2,6 +2,7 @@ import React from "react";
 import "./header.css";
 import NavListItem from "../components/NavListItem";
 import navListData from "../data/navListData";
+import Search from "../components/Search";
 
 function Header() {
     return (
@@ -14,6 +15,7 @@ function Header() {
                     <NavListItem key={nav._id} nav={nav} />
                 ))}
             </ul>
+            <Search />
         </header>
     );
 }
