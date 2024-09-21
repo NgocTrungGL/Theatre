@@ -9,8 +9,8 @@ good luck !!!
 
 Phân công Code Project FinalProjectPython:
 
-Trung: Fetch Data from Mock API(1:20) timeline: 4days
-Phước: Fetch Data from Mock API(1:20->Hết) timeline: 4days
+Trung: Fetch Data from Mock API(1:20) timeline: 4days + Data Mapping => Done
+Phước: Fetch Data from Mock API(1:20->Hết) timeline: 4days => Done 
 Nhật: Banner Carousel Slider timeline: 4days
 
 Deadline: 25/09 
