@@ -42,14 +42,15 @@
     object-fit: cover;
     object-position: center;
     font-size: 8rem;
-    /* visibility: hidden;
-    opacity: 0; */
-    transition: 1s;
+    visibility: hidden; /* Ẩn mặc định */
+    opacity: 0; /* Ẩn mặc định */
+    transition: visibility 0s linear 1s, opacity 1s ease-in-out; /* Chuyển tiếp */
 }
 
 .bgImg.active {
-    visibility: visible;
-    opacity: 1;
+    visibility: visible; /* Hiển thị khi active */
+    opacity: 1; /* Hiển thị khi active */
+    transition-delay: 0s; /* Bỏ qua delay khi active */
 }
 
 .banner .playBtn {
@@ -80,7 +81,7 @@
     left: -5px;
     right: -5px;
     bottom: -5px;
-    content: '';
+    content: "";
     background: transparent;
     border: 10px solid #ffffff;
     border-radius: 50%;
