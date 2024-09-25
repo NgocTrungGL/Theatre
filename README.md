@@ -1,15 +1,15 @@
 install 
 https://nodejs.org/en/download/prebuilt-installer
-
 kiểm tra cài đặt thành công hay chưa:
-
 node --version hoặc npm --version
+git clone https://github.com/NgocTrungGL/Theatre
+https://github.com/NgocTrungGL/Theatre
+set up project:
+npm install react-scripts --save
 Run Project: npm start
 good luck !!!
 
-Install Boottrap and Swiper: 
 
-npm i bootstrap swiper
 
 Phân công Code Project FinalProjectPython:
 
