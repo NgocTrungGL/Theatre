@@ -1,15 +1,15 @@
 import React from "react";
-import './modal.css';
+import "./modal.css";
 
-function Modal({movie, status, toggleModal}) {
+function Modal({ movie, status, toggleModal }) {
     return (
-        <div className={`movieModal ${status ? 'active' : undefined}`}>
-            <a href="#" className="modalClose" onClick={toggleModal}>
+        <div className={`movieModal ${status ? "active" : undefined}`}>
+            <a href="!#" className="modalClose" onClick={toggleModal}>
                 <ion-icon name="close-outline"></ion-icon>
             </a>
             <iframe
-                width="1280"
-                height="720"
+                width="960"
+                height="540"
                 src={movie.video}
                 title={`${movie.title} | Official Trailer`}
                 frameBorder="0"
@@ -17,7 +17,7 @@ function Modal({movie, status, toggleModal}) {
                 allowFullScreen
             ></iframe>
         </div>
-    );   
+    );
 }
 
 export default Modal;

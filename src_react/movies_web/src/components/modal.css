@@ -2,8 +2,8 @@
     position: absolute;
     content: "";
     top: 125px;
-    left: 100px;
-    right: 100px;
+    left: 70px;
+    right: 70px;
     bottom: 0;
     background: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(20px);
@@ -17,16 +17,16 @@
     transition: 1s;
 }
 
-.movieModal iframe{
+.movieModal iframe {
     max-width: 1280px;
     max-height: 720px;
 }
 
-.movieModal .modalClose{
+.movieModal .modalClose {
     position: absolute;
     top: 30px;
     right: 30px;
-    cursor:  pointer;
+    cursor: pointer;
     color: #ffffff;
     font-size: 1.8rem;
 }
