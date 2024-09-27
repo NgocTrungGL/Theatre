@@ -8,7 +8,7 @@ function PlayBtn({ movie }) {
                 movie.active ? "active" : undefined
             }`}
         >
-            <a href="#" className="playBtn">
+            <a href={movie.video} className="playBtn">
                 <ion-icon name="play-outline"></ion-icon>
             </a>
             <p>Watch Trailer</p>
