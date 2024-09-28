@@ -5,10 +5,11 @@
     transform: scale(0);
     z-index: 1000;
 }
+
 .banner .trailer.active {
     visibility: visible;
     opacity: 1;
-    transform: scale(1);
+    transform: scale(1) translateY(-0.7cm); 
 }
 
 .trailer p {
