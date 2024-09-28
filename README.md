@@ -19,5 +19,5 @@ Nhật:  1, (Banner Video model + Main Section ) + 4, Phần còn lại ngày
 
 Deadline: 1/10 
 Link học Flask: https://www.youtube.com/watch?v=TkZAxnoe1qo&list=PLFyAEmibWSQCc60nNQByzmtbMjk3fGyIK
-
-![image](https://github.com/user-attachments/assets/95c4d9de-5396-489d-a101-6196c964d5ae)
+Main Page
+![image](https://github.com/user-attachments/assets/5ea28aae-995a-4f6f-839b-65eaa171ccf6)
