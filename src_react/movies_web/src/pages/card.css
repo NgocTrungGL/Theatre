@@ -1,0 +1,89 @@
+section .movie-card {
+    border: none;
+    position: relative;
+    border-radius: 0;
+    background: #000000 !important;
+    box-shadow: 0 0 16 rgba(255, 255, 255, 0.5);
+    transition: 0.5s;
+}
+
+section .movie-card::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+    transform: scale(0);
+}
+
+section .movie-card p {
+    color: #dddddd;
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-align: center;
+    padding: 10px 0;
+}
+
+section .movie-card .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+    transform: scale(0);
+}
+
+section .movie-card .content h4 {
+    position: relative;
+    columns: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+section .movie-card .content h4::before {
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: -10px;
+    height: 5px;
+    width: 80%;
+    background: linear-gradient(
+        90deg,
+        var(--primary),
+        var(--primary),
+        transparent
+    );
+    z-index: 1000;
+}
+
+section .movie-card .content ion-icon {
+    font-size: 2.5rem;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+section .movie-card .content ion-icon::hover {
+    color: var(--primary);
+}
+
+section .movie-card:hover .content,
+section .movie-card:hover::before {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
