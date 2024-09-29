@@ -13,11 +13,13 @@ good luck !!! <br>
 
 Phân công Code Project FinalProjectPython: <br>
 
-Trung: 3, Dynamic Filter 3 ngày <br>
-Phước: 2, Schedule Section 3 ngày <br>
-Nhật:  1, (Banner Video model + Main Section ) + 4, Phần còn lại ngày <br>
+Trung: 1, Dynamic Filter 3 ngày <br>
+Phước: Done -> Bắt đầu học Flask <br>
+Nhật: 2, Phần còn lại ngày <br>
 
 Deadline: 1/10  <br>
 Link học Flask: https://www.youtube.com/watch?v=TkZAxnoe1qo&list=PLFyAEmibWSQCc60nNQByzmtbMjk3fGyIK <br>
 Main Page
 ![image](https://github.com/user-attachments/assets/5ea28aae-995a-4f6f-839b-65eaa171ccf6)
+view 
+![image](https://github.com/user-attachments/assets/a5ecbb99-3626-42a4-a449-976a84aafc4d)
