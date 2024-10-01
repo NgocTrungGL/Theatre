@@ -13,7 +13,7 @@ good luck !!! <br>
 
 Phân công Code Project FinalProjectPython: <br>
 
-Trung: 1, Dynamic Filter 3 ngày <br>
+Trung: Done -> Bắt đầu học Flask <br>
 Phước: Done -> Bắt đầu học Flask <br>
 Nhật: 2, Phần còn lại ngày <br>
 
