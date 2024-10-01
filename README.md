@@ -3,7 +3,6 @@ https://nodejs.org/en/download/prebuilt-installer <br>
 kiểm tra cài đặt thành công hay chưa: <br>
 node --version hoặc npm --version <br>
 git clone https://github.com/NgocTrungGL/Theatre <br>
-https://github.com/NgocTrungGL/Theatre <br>
 set up project: <br>
 npm install react-scripts --save <br>
 Run Project: npm start <br>
