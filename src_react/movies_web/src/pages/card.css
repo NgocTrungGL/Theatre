@@ -23,7 +23,7 @@ section .movie-card::before {
 
 section .movie-card p {
     color: #dddddd;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 400;
     text-align: center;
     padding: 10px 0;
