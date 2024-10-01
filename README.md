@@ -14,7 +14,7 @@ Phân công Code Project FinalProjectPython: <br>
 
 Trung: Done -> Bắt đầu học Flask <br>
 Phước: Done -> Bắt đầu học Flask <br>
-Nhật: 2, Phần còn lại ngày <br>
+Nhật: Done -> Bắt đầu học Flask <br>
 
 Deadline: 1/10  <br>
 Link học Flask: https://www.youtube.com/watch?v=TkZAxnoe1qo&list=PLFyAEmibWSQCc60nNQByzmtbMjk3fGyIK <br>
