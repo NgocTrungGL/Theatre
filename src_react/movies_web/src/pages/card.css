@@ -9,7 +9,7 @@ section .movie-card {
 
 section .movie-card::before {
     position: absolute;
-    content: '';
+    content: "";
     top: 0;
     left: 0;
     right: 0;
@@ -57,7 +57,7 @@ section .movie-card .content h4 {
 
 section .movie-card .content h4::before {
     position: absolute;
-    content: '';
+    content: "";
     left: 0;
     bottom: -10px;
     height: 5px;

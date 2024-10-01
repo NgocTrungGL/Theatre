@@ -1,10 +1,14 @@
 import React from "react";
-
-function Card({movie}) {
+import "./card.css";
+function Card({ movie }) {
     return (
         <div className="col-lg-2 col-md-4 col-sm-6">
             <div className="movie-card">
-                <img src={movie.previewImg} alt="Priview Image" className="img-fluid"/>
+                <img
+                    src={movie.previewImg}
+                    alt="Priview Image"
+                    className="img-fluid"
+                />
                 <p>
                     {movie.length} | {movie.category}
                 </p>
@@ -16,7 +20,7 @@ function Card({movie}) {
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
-export default Card
+export default Card;
