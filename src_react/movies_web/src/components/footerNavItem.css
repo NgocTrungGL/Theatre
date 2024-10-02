@@ -1,0 +1,57 @@
+.footer .footer-top .footer-links {
+
+    margin-bottom: 30px;
+
+}
+
+.footer .footer-top .footer-links ul {
+
+    list-style: none;
+
+    padding: 0;
+
+    margin: 0;
+}
+
+.footer .footer-top .footer-links ul ion-icon {
+
+    padding-right: 2px;
+
+    color: #d0d4fc;
+
+    font-size: 12px;
+
+    line-height: 0;
+
+
+}
+
+.footer .footer-top .footer-links ul li {
+
+    padding: 10px 0;
+    display: flex;
+
+    align-items: center;
+
+}
+
+
+.footer .footer-top .footer-links ul li:first-child {
+
+    padding-top: 0;
+}
+
+.footer .footer-top .footer-links ul a {
+
+    text-decoration: none;
+
+    color: #ffffff;
+
+    transition: 0.3s;
+    display: inline-block;
+    line-height: 1;
+}
+
+.footer .footer-top .footer-links ul a:hover {
+    color: var(--primary);
+}
