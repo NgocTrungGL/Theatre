@@ -18,9 +18,9 @@ Kế hoạch phát triển:
 Tạo thêm các component: Avatar User, Sign-in, Sign-Up.
 Phân quyền và xây dựng CRUD cho User.
 Và các chức năng chi tiết trong ứng dụng.
-
-Deadline: 1/10  <br>
-Link học Flask: https://www.youtube.com/watch?v=TkZAxnoe1qo&list=PLFyAEmibWSQCc60nNQByzmtbMjk3fGyIK <br>
+Back-end:
+Link học Flask Basic: https://www.youtube.com/watch?v=TkZAxnoe1qo&list=PLFyAEmibWSQCc60nNQByzmtbMjk3fGyIK <br>
+RESTful API Flask: https://www.youtube.com/playlist?list=PLFyAEmibWSQCTLd1zuWTpbKphX_Q5kv4v
 # Main Page
 ![image](https://github.com/user-attachments/assets/5ea28aae-995a-4f6f-839b-65eaa171ccf6)
 # View 
