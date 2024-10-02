@@ -8,8 +8,6 @@ npm install react-scripts --save <br>
 Run Project: npm start <br>
 good luck !!! <br>
 
-
-
 # Phân công Code Project FinalProjectPython: <br>
 
 Trung: Done -> Bắt đầu học Flask <br>
@@ -24,4 +22,5 @@ Link học Flask: https://www.youtube.com/watch?v=TkZAxnoe1qo&list=PLFyAEmibWSQC
 ![image](https://github.com/user-attachments/assets/64f93079-b9e0-4ce8-b4f6-5bd39335289a)
 # Blog
 ![image](https://github.com/user-attachments/assets/f90eb713-55ed-4937-a87f-00697b2bfbaf)
-
+# Footer
+![image](https://github.com/user-attachments/assets/24d0dcbe-ea8d-4694-9cbf-9cb051a2f1dc)
