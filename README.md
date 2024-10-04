@@ -1,4 +1,4 @@
-# Install  <br>
+# Install NodeJS <br>
 https://nodejs.org/en/download/prebuilt-installer <br>
 # Kiểm tra cài đặt thành công hay chưa: <br>
 node --version hoặc npm --version <br>
