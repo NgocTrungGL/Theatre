@@ -13,14 +13,14 @@ good luck !!! <br>
 Trung: Done -> Bắt đầu học Flask <br>
 Phước: Done -> Bắt đầu học Flask <br>
 Nhật: Done -> Bắt đầu học Flask <br>
-Front-end : Done
-Kế hoạch phát triển:
-Tạo thêm các component: Avatar User, Sign-in, Sign-Up.
-Phân quyền và xây dựng CRUD cho User.
-Và các chức năng chi tiết trong ứng dụng.
-Back-end:
+Front-end : Done <br>
+Kế hoạch phát triển: <br>
+Tạo thêm các component: Avatar User, Sign-in, Sign-Up.<br>
+Phân quyền và xây dựng CRUD cho User.<br>
+Và các chức năng chi tiết trong ứng dụng.<br>
+Back-end:<br>
 Link học Flask Basic: https://www.youtube.com/watch?v=TkZAxnoe1qo&list=PLFyAEmibWSQCc60nNQByzmtbMjk3fGyIK <br>
-RESTful API Flask: https://www.youtube.com/playlist?list=PLFyAEmibWSQCTLd1zuWTpbKphX_Q5kv4v
+RESTful API Flask: https://www.youtube.com/playlist?list=PLFyAEmibWSQCTLd1zuWTpbKphX_Q5kv4v <br>
 # Main Page
 ![image](https://github.com/user-attachments/assets/5ea28aae-995a-4f6f-839b-65eaa171ccf6)
 # View 
