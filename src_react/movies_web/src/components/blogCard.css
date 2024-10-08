@@ -1,4 +1,4 @@
-.blog article{
+.blog article {
     background: transparent;
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
     padding: 30px;
@@ -7,17 +7,17 @@
     overflow: hidden;
 }
 
-.bog article:hover{
+.bog article:hover {
     box-shadow: 0 0 30px rgba(255, 255, 255, 0.6);
 }
 
-.bog .post-img{
+.bog .post-img {
     max-height: 240px;
     margin: -30px -30px 15px -30px;
     overflow: hidden;
 }
 
-.blog .post-category{
+.blog .post-category {
     font-size: 1rem;
     font-weight: 400;
     color: #ffffff;
@@ -37,12 +37,12 @@
     text-decoration: none;
 }
 
-.blog .title a:hover{
+.blog .title a:hover {
     color: var(--primary);
 }
 
-.blog .post-author-img{
-    width: 50px;
+.blog .post-author-img {
+    width: 90px;
     border-radius: 50%;
     margin-right: 15px;
 }
