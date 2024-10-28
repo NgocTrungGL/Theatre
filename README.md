@@ -7,7 +7,8 @@ set up project: <br>
 npm install react-scripts --save <br>
 Run Project: npm start <br>
 good luck !!! <br>
-
+# Import DB
+Create DB with file sql on repo
 # Phân công Code Project FinalProjectPython: <br>
 
 Trung: Done -> Bắt đầu học Flask <br>
