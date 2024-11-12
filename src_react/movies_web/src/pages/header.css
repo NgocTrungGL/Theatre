@@ -42,6 +42,8 @@ header.scrolled {
 
 /* test */
 .profile-dropdown {
+    margin-top: 45px;
+    margin-right: 15px;
     position: absolute;
     top: 40px; /* Adjust based on button height */
     right: 10px; /* Aligns with button */
@@ -84,7 +86,7 @@ header.scrolled {
     color: red;
 }
 .icon-only {
-    font-size: 24px; /* Adjust size as needed */
+    font-size: 58px; /* Adjust size as needed */
     cursor: pointer;
     color: white;
     display: flex;

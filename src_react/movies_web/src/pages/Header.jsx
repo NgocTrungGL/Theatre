@@ -37,7 +37,7 @@ function Header({ scroll }) {
                     <Button icon={<ion-icon name="log-in-outline"></ion-icon>} name="Sign In" />
                 ) : (
                     <div className="icon-only">
-                        <ion-icon name="person-circle-outline" size="large"></ion-icon>
+                        <ion-icon name="person-circle-outline" size="extra-large"></ion-icon>
                     </div>
                 )}
                 {isButtonClicked && (
@@ -49,7 +49,7 @@ function Header({ scroll }) {
                             <li>Tài khoản</li>
                             <li>Trung tâm trợ giúp</li>
                             <div className="dropdown-divider"></div>
-                            <li className="logout">Đăng xuất khỏi Netflix</li>
+                            <li className="logout">Đăng xuất</li>
                         </ul>
                     </div>
                 )}
