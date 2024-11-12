@@ -18,7 +18,7 @@ function Header({ scroll }) {
     };
 
     const handleBtnOnClick = () => {
-        setIsButtonClicked((prev) => !prev); // Toggle dropdown visibility
+        setIsButtonClicked((prev) => !prev);
     };
 
     return (
@@ -33,7 +33,13 @@ function Header({ scroll }) {
             </ul>
             <Search />
             <div className="button-container" onClick={handleBtnOnClick}>
-                <Button icon={<ion-icon name="log-in-outline"></ion-icon>} name="Sign In" />
+                {!isButtonClicked ? (
+                    <Button icon={<ion-icon name="log-in-outline"></ion-icon>} name="Sign In" />
+                ) : (
+                    <div className="icon-only">
+                        <ion-icon name="person-circle-outline" size="large"></ion-icon>
+                    </div>
+                )}
                 {isButtonClicked && (
                     <div className="profile-dropdown">
                         <div className="dropdown-divider"></div>

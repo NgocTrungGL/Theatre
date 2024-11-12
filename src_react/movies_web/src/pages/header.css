@@ -83,3 +83,10 @@ header.scrolled {
 .logout {
     color: red;
 }
+.icon-only {
+    font-size: 24px; /* Adjust size as needed */
+    cursor: pointer;
+    color: white;
+    display: flex;
+    align-items: center;
+}
