@@ -22,9 +22,7 @@ Và các chức năng chi tiết trong ứng dụng.<br>
 Back-end:<br>
 Link học Flask Basic: https://www.youtube.com/watch?v=TkZAxnoe1qo&list=PLFyAEmibWSQCc60nNQByzmtbMjk3fGyIK <br>
 RESTful API Flask: https://www.youtube.com/playlist?list=PLFyAEmibWSQCTLd1zuWTpbKphX_Q5kv4v <br>
-Note 10/11/2024 : <br>
-Trung: Học CRUD <br>
-Phước: thêm user trên app <br>
+Note 10/11/2024 : Done
 Nhật: tìm thêm Template ReactJs Movies của Log-in and Sign-in <br>
 # Main Page
 ![image](https://github.com/user-attachments/assets/5ea28aae-995a-4f6f-839b-65eaa171ccf6)
