@@ -18,7 +18,7 @@ function Header({ scroll }) {
     };
 
     const handleBtnOnClick = () => {
-        setIsButtonClicked((prev) => !prev);
+        window.location.href = '';
     };
 
     return (
