@@ -1,62 +1,49 @@
 import base64
 from flask import request, jsonify
 from models.movie_model import db, Movie
+import os
 
-# def create_movie():
-#     data = request.get_json()
-#     title_img_data = None
-#     bg_img_data = None
-#     preview_img_data = None
-
-#     if 'titleImg' in data:
-#         with open(data['titleImg'], 'rb') as f:
-#             title_img_data = f.read()  # Read the title image as binary data
-
-#     if 'bgImg' in data:
-#         with open(data['bgImg'], 'rb') as f:
-#             bg_img_data = f.read()  # Read the background image as binary data
-
-#     if 'previewImg' in data:
-#         with open(data['previewImg'], 'rb') as f:
-#             preview_img_data = f.read()  # Read the preview image as binary data
-#     new_movie = Movie(
-#         titleImg=title_img_data,
-#         bgImg=bg_img_data,
-#         previewImg=preview_img_data,
-#         video=data['video'],
-#         title=data['title'],
-#         year=data['year'],  # Ensure this is an integer
-#         date=data['date'],
-#         ageLimit=data['ageLimit'],
-#         length=data['length'],
-#         category=data['category'],
-#         type=data['type'],
-#         description=data['description'],
-#         active=data.get('active', False)  # Default to False if not provided
-#     )
-
-#     db.session.add(new_movie)
-#     db.session.commit()
-#     return jsonify({'message': 'Movie created successfully'}), 201
 
 def create_movie():
     data = request.get_json()
     title_img_data = None
     bg_img_data = None
     preview_img_data = None
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    # if 'titleImg' in data:
+    #     with open(data['titleImg'], 'rb') as f:
+    #         title_img_data = f.read()  # Read the title image as binary data
+            
+    # if 'bgImg' in data:
+    #     with open(data['bgImg'], 'rb') as f:
+    #         bg_img_data = f.read()  # Read the background image as binary data
 
+    # if 'previewImg' in data:
+    #     with open(data['previewImg'], 'rb') as f:
+    #         preview_img_data = f.read()  # Read the preview image as binary data
     if 'titleImg' in data:
-        with open(data['titleImg'], 'rb') as f:
-            title_img_data = f.read()  # Read the title image as binary data
+        # Xây dựng đường dẫn tuyệt đối cho titleImg
+        title_img_path = os.path.join(base_dir, data['titleImg'])
+        # Kiểm tra nếu file tồn tại và đọc nội dung
+        if os.path.exists(title_img_path):
+            with open(title_img_path, 'rb') as f:
+                title_img_data = f.read()
 
     if 'bgImg' in data:
-        with open(data['bgImg'], 'rb') as f:
-            bg_img_data = f.read()  # Read the background image as binary data
+        # Xây dựng đường dẫn tuyệt đối cho bgImg
+        bg_img_path = os.path.join(base_dir, data['bgImg'])
+        # Kiểm tra nếu file tồn tại và đọc nội dung
+        if os.path.exists(bg_img_path):
+            with open(bg_img_path, 'rb') as f:
+                bg_img_data = f.read()
 
     if 'previewImg' in data:
-        with open(data['previewImg'], 'rb') as f:
-            preview_img_data = f.read()  # Read the preview image as binary data
-
+        # Xây dựng đường dẫn tuyệt đối cho previewImg
+        preview_img_path = os.path.join(base_dir, data['previewImg'])
+        # Kiểm tra nếu file tồn tại và đọc nội dung
+        if os.path.exists(preview_img_path):
+            with open(preview_img_path, 'rb') as f:
+                preview_img_data = f.read()
     new_movie = Movie(
         titleImg=title_img_data,
         bgImg=bg_img_data,
