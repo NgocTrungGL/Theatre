@@ -12,3 +12,4 @@ class User(db.Model):
     password = db.Column(db.String(100), nullable=False)  # Mật khẩu mã hóa
     registration_date = db.Column(db.DateTime, default=datetime.utcnow)
     last_login = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+

@@ -18,7 +18,7 @@ function Header({ scroll }) {
     };
 
     const handleBtnOnClick = () => {
-        window.location.href = '';
+        window.location.href = 'http://localhost:3001/';
     };
 
     return (
