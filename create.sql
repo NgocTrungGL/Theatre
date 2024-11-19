@@ -28,15 +28,15 @@ CREATE TABLE Users (
 );
 -- Bảng Watchlist (Danh sách phim yêu thích của người dùng)
 
-CREATE TABLE Watchlist (
-    watchlist_id INT AUTO_INCREMENT PRIMARY KEY,
-    user_id INT,
-    movie_id INT,
-    added_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (user_id) REFERENCES Users(user_id),
-    FOREIGN KEY (movie_id) REFERENCES Movies(movie_id)
-);
--- -- Bảng Movie_Genres (Liên kết phim với thể loại)
+-- CREATE TABLE Watchlist (
+--     watchlist_id INT AUTO_INCREMENT PRIMARY KEY,
+--     user_id INT,
+--     movie_id INT,
+--     added_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+--     FOREIGN KEY (user_id) REFERENCES Users(user_id),
+--     FOREIGN KEY (movie_id) REFERENCES Movies(movie_id)
+-- );
+-- -- -- Bảng Movie_Genres (Liên kết phim với thể loại)
 -- CREATE TABLE Movie_Genres (
 --     movie_id INT,
 --     genre_id INT,
