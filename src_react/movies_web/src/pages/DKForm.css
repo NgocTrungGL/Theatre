@@ -1,4 +1,4 @@
-.wrapperDK{
+.wrapperDK {
     width: 420px;
     background: transparent;
     border: 2px solid rgba(255, 255, 255, .2);
@@ -7,6 +7,13 @@
     color: #fff;
     border-radius: 10px;
     padding: 30px 40px;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+    min-height: 100vh; /* Ensure it takes the full height of the viewport */
+    margin: 0 auto; /* Center horizontally */
+    width: 420px; /* Fixed width */
 }
 
 .wrapperDK h1 {
