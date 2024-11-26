@@ -1,21 +1,6 @@
 body {
     background-image: url("../img/login_img.jpg");
 }
-
-div .wrapper {
-    width: 420px;
-    background: transparent;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(3px);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    color: #fff;
-    border-radius: 10px;
-    padding: 30px 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
  
 .wrapper h1 {
     font-size: 36px;
@@ -29,6 +14,13 @@ div .wrapper {
     margin: 30px 0;
 }
  
+.wrapper .remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14.5px;
+    margin: -15px 0 15px;
+}
+
 .input-box input {
     width: 100%;
     height: 100%;
@@ -44,7 +36,7 @@ div .wrapper {
 .input-box input::placeholder {
     color: #fff;
 }
- 
+
 .input-box .icon {
     position: absolute;
     right: 20px;
@@ -52,14 +44,7 @@ div .wrapper {
     transform: translateY(-50%);
     font-size: 16px;
 }
- 
-.wrapper .remember-forgot {
-    display: flex;
-    justify-content: space-between;
-    font-size: 14.5px;
-    margin: -15px 0 15px;
-}
- 
+
 .remember-forgot label input {
     accent-color: #fff;
     margin-right: 4px;
@@ -102,4 +87,21 @@ div .wrapper {
  
 .register-link p a:hover {
     text-decoration: underline;
+}
+
+.wrapper {
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    width: 420px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(3px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    border-radius: 10px;
+    padding: 30px 40px;
+    display: flex;
+    
 }

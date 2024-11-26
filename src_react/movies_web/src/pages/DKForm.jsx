@@ -5,7 +5,7 @@ import './DKForm.css';
  
 const DKForm = ({ setCurrentPage }) => {
     return (
-        <div className="wrapper">
+        <div className="wrapperDK">
             <form action="">
                 <h1>Register</h1>
                 <div className="input-box">

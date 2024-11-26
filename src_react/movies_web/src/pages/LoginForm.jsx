@@ -1,12 +1,12 @@
 import React from 'react';
 import { FaUser, FaLock } from "react-icons/fa";
 import './LoginForm.css';
- 
+
 const LoginForm = ({ setCurrentPage }) => {
     const navigateTo = (page) => {
         setCurrentPage(page);
     };
- 
+
     return (
         <div className="wrapper">
             <form action="">
