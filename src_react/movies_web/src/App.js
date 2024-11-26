@@ -67,18 +67,12 @@ function App() {
         };
     }, [scroll]);
 
-    // Hàm điều hướng giữa các trang
-    const navigateTo = (page) => {
-        setCurrentPage(page);
-    };
-
-    // Render trang dựa trên trạng thái
     const renderPage = () => {
         switch (currentPage) {
             case "login":
-                return <LoginForm navigateTo={navigateTo} />;
+                return <LoginForm setCurrentPage={setCurrentPage} />;
             case "register":
-                return <DKForm navigateTo={navigateTo} />;
+                return <DKForm setCurrentPage={setCurrentPage} />;
             default:
                 return (
                     <>

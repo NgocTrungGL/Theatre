@@ -1,8 +1,12 @@
-import React from "react";
-import "./LoginForm.css";
+import React from 'react';
 import { FaUser, FaLock } from "react-icons/fa";
-
-const LoginForm = () => {
+import './LoginForm.css';
+ 
+const LoginForm = ({ setCurrentPage }) => {
+    const navigateTo = (page) => {
+        setCurrentPage(page);
+    };
+ 
     return (
         <div className="wrapper">
             <form action="">
@@ -22,17 +26,18 @@ const LoginForm = () => {
                     </label>
                     <a href="#">Forgot password?</a>
                 </div>
-
-                <button type="submit">Login</button>
-
-                <div className="regiter-link">
+ 
+                <button type="submit" onClick={() => navigateTo('home')}>Login</button>
+ 
+                <div className="register-link">
                     <p>
-                        Don't have an account?<a href="#">Register</a>
+                        Don't have an account?{' '}
+                        <a href="#" onClick={() => navigateTo('register')}>Register</a>
                     </p>
                 </div>
             </form>
         </div>
     );
 };
-
+ 
 export default LoginForm;
