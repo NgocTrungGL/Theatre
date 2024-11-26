@@ -66,3 +66,30 @@ def delete_user(user_id):
     db.session.delete(user)
     db.session.commit()
     return jsonify({'message': 'User deleted successfully'}), 200
+from flask import Blueprint, request, jsonify
+from models.user_model import User
+
+user_blueprint = Blueprint('user_blueprint', __name__)
+
+# Đăng nhập
+@user_blueprint.route('/login', methods=['POST'])
+def login():
+    data = request.get_json()  # Lấy dữ liệu JSON từ request
+    username = data.get('username')  # Lấy tên người dùng
+    password = data.get('password')  # Lấy mật khẩu
+
+    # Tìm người dùng trong cơ sở dữ liệu
+    user = User.query.filter_by(username=username).first()
+
+    if user and user.password == password:  # So sánh mật khẩu thô
+        # Nếu mật khẩu đúng, trả về thông tin người dùng
+        return jsonify({
+            "message": "Login successful",
+            "user": {
+                "id": user.user_id,
+                "username": user.username
+            }
+        }), 200
+    else:
+        # Nếu không có người dùng hoặc mật khẩu sai
+        return jsonify({"message": "Invalid credentials"}), 401

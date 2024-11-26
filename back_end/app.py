@@ -4,11 +4,12 @@ from controllers.user_controller import create_user, get_all_users, get_user, up
 from controllers.movie_controller import create_movie, get_all_movies, get_movie, update_movie, delete_movie
 from models.user_model import db
 from config import Config
-
+from controllers.user_controller import user_blueprint
+from flask_cors import CORS
 app = Flask(__name__)
 app.config.from_object(Config)
 db.init_app(app)
-
+CORS(app)
 # Tạo database ban đầu
 with app.app_context():
     db.create_all()
@@ -56,6 +57,9 @@ def update_movie_route(movie_id):
 @app.route('/movies/<int:movie_id>', methods=['DELETE'])
 def delete_movie_route(movie_id):
     return delete_movie(movie_id)
+
+app.register_blueprint(user_blueprint, url_prefix='/api/users')
+
 
 if __name__ == '__main__':
     app.run(debug=True)
