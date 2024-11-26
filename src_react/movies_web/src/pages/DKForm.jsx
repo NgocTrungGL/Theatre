@@ -81,7 +81,7 @@ const DKForm = ({ setCurrentPage }) => {
 
     return (
         <div className="wrapper">
-            <form onSubmit={handleSubmit}>
+            <form action="">
                 <h1>Register</h1>
                 <div className="input-box">
                     <input

@@ -1,4 +1,4 @@
-.wrapper{
+.wrapperDK {
     width: 420px;
     background: transparent;
     border: 2px solid rgba(255, 255, 255, .2);
@@ -7,14 +7,21 @@
     color: #fff;
     border-radius: 10px;
     padding: 30px 40px;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+    min-height: 100vh; /* Ensure it takes the full height of the viewport */
+    margin: 0 auto; /* Center horizontally */
+    width: 420px; /* Fixed width */
 }
 
-.wrapper h1 {
+.wrapperDK h1 {
     font-size: 36px;
     text-align: center;
 }
 
-.wrapper .input-box{
+.wrapperDK .input-box{
     position: relative;
     width: 100%;
     height: 50px;
@@ -47,7 +54,7 @@
     font-size: 16px;
 }
 
-.wrapper button{
+.wrapperDK button{
     width: 100%;
     height: 45px;
     background: #fff;
@@ -61,7 +68,7 @@
     font-weight: 700;
 }
 
-.wrapper .account-link {
+.wrapperDK .account-link {
     font-size: 14.5px;
     text-align: center;
     margin: 20px 0 15px;
