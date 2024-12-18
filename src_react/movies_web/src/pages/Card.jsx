@@ -15,7 +15,7 @@ function Card({ movie }) {
                 <div className="content">
                     <h4>{movie.title}</h4>
                     <div className="card-icons"></div>
-                    <ion-icon name="add-outline"></ion-icon>
+                    {/* <ion-icon name="add-outline"></ion-icon> */}
                     <ion-icon name="play-outline"></ion-icon>
                 </div>
             </div>
