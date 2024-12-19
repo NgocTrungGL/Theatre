@@ -54,39 +54,41 @@ import LoginForm from "./pages/LoginForm";
 import DKForm from "./pages/DKForm";
 
 function App() {
-    const [scroll, setScroll] = useState(0);
-    const [currentPage, setCurrentPage] = useState("login"); // Trang mặc định là Login
+    // const [scroll, setScroll] = useState(0);
+    // const [currentPage, setCurrentPage] = useState("login"); // Trang mặc định là Login
 
-    // Quản lý sự kiện cuộn
-    useEffect(() => {
-        const handleScroll = () => setScroll(window.scrollY);
+    // // Quản lý sự kiện cuộn
+    // useEffect(() => {
+    //     const handleScroll = () => setScroll(window.scrollY);
 
-        window.addEventListener("scroll", handleScroll);
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
-    }, [scroll]);
+    //     window.addEventListener("scroll", handleScroll);
+    //     return () => {
+    //         window.removeEventListener("scroll", handleScroll);
+    //     };
+    // }, [scroll]);
 
-    const renderPage = () => {
-        switch (currentPage) {
-            case "login":
-                return <LoginForm setCurrentPage={setCurrentPage} />;
-            case "register":
-                return <DKForm setCurrentPage={setCurrentPage} />;
-            default:
-                return (
-                    <>
-                        <Header scroll={scroll} />
-                        <Banner />
-                        <Main />
-                        <Footer />
-                        <BackToTopBtn scroll={scroll} />
-                    </>
-                );
-        }
-    };
-
-    return <>{renderPage()}</>;
+    // const renderPage = () => {
+    //     switch (currentPage) {
+    //         case "login":
+    //             return <LoginForm setCurrentPage={setCurrentPage} />;
+    //         case "register":
+    //             return <DKForm setCurrentPage={setCurrentPage} />;
+    //         default:
+    return (
+        <>
+            {/* <Header scroll={scroll} /> */}
+            <Header />
+            <Banner />
+            <Main />
+            <Footer />
+            {/* <BackToTopBtn scroll={scroll} /> */}
+            <BackToTopBtn />
+        </>
+    );
+    // }
 }
+
+//     return <>{renderPage()}</>;
+// }
 
 export default App;
