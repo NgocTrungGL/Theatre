@@ -23,9 +23,19 @@ const LoginForm = ({ setCurrentPage }) => {
             );
 
             if (response.ok) {
-                const data = await response.json();
-                console.log("Login successful:", data);
-                setCurrentPage("home"); // Chuyển hướng nếu đăng nhập thành công
+                //Admin
+                if (username === "admin" && password === "admin123"){
+                    const data = await response.json();
+                    console.log("Login successful:", data);
+                    setCurrentPage("admin");
+                }
+                //User thuong
+                else{
+                    const data = await response.json();
+                    console.log("Login successful:", data);
+                    setCurrentPage("home"); // Chuyển hướng nếu đăng nhập thành công
+                }
+                
             } else {
                 const errorData = await response.json();
                 setError(errorData.message || "Login failed");
