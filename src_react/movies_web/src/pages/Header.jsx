@@ -3,11 +3,10 @@ import "./header.css";
 import NavListItem from "../components/NavListItem";
 import navListData from "../data/navListData";
 import Search from "../components/Search";
-import Button from "../components/Button";
+// import Button from "../components/Button";
 
 function Header({ scroll }) {
     const [navList, setNavList] = useState(navListData);
-    const [isButtonClicked, setIsButtonClicked] = useState(false);
 
     const handleNavOnClick = (id) => {
         const newNavList = navList.map((nav) => ({
@@ -17,9 +16,6 @@ function Header({ scroll }) {
         setNavList(newNavList);
     };
 
-    const handleBtnOnClick = () => {
-        window.location.href = "http://localhost:3001/";
-    };
 
     return (
         <header className={`${scroll > 100 ? "scrolled" : ""}`}>
@@ -36,33 +32,25 @@ function Header({ scroll }) {
                 ))}
             </ul>
             <Search />
-            <div className="button-container" onClick={handleBtnOnClick}>
-                {!isButtonClicked ? (
-                    <Button
-                        icon={<ion-icon name="log-in-outline"></ion-icon>}
-                        name="Sign In"
-                    />
-                ) : (
+            <div className="button-container">
+                (
                     <div className="icon-only">
                         <ion-icon
                             name="person-circle-outline"
                             size="extra-large"
                         ></ion-icon>
                     </div>
-                )}
-                {isButtonClicked && (
-                    <div className="profile-dropdown">
+                )
+
+                <div className="profile-dropdown">
+                    <div className="dropdown-divider"></div>
+                    <ul className="menu-options">
+                        <li>Tài khoản</li>
+                        <li>Trung tâm trợ giúp</li>
                         <div className="dropdown-divider"></div>
-                        <ul className="menu-options">
-                            <li>Quản lý hồ sơ</li>
-                            <li>Chuyển hồ sơ</li>
-                            <li>Tài khoản</li>
-                            <li>Trung tâm trợ giúp</li>
-                            <div className="dropdown-divider"></div>
-                            <li className="logout">Đăng xuất</li>
-                        </ul>
-                    </div>
-                )}
+                        <li className="logout">Đăng xuất</li>
+                    </ul>
+                </div>
             </div>
         </header>
     );

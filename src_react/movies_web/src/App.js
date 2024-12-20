@@ -13,6 +13,7 @@ import BackToTopBtn from "./components/BackToTopBtn";
 import VideoPlayerPage from "./components/VideoPlayerPage"; // Trang phát video
 import LoginForm from "./pages/LoginForm"; // Form đăng nhập
 import DKForm from "./pages/DKForm"; // Form đăng ký
+import AdminDashboard from "./pages/Admin";
 
 function App() {
     const [scroll, setScroll] = useState(0);
@@ -44,7 +45,10 @@ function App() {
         if (currentPage === "register") {
             return <DKForm setCurrentPage={setCurrentPage} />;
         }
-        return renderMainPage(); // Trả về trang chính nếu không ở login hoặc register
+        if (currentPage === "admin") {
+            return <AdminDashboard setCurrentPage={setCurrentPage} />;
+        }
+        return renderMainPage();
     };
 
     return (
