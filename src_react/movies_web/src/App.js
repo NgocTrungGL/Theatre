@@ -10,7 +10,7 @@ import Banner from "./pages/Banner";
 import Main from "./pages/Main";
 import Footer from "./pages/Footer";
 import BackToTopBtn from "./components/BackToTopBtn";
-import VideoPlayerPage from "./pages/VideoPlayerPage"; // Trang phát video
+import VideoPlayerPage from "./components/VideoPlayerPage"; // Trang phát video
 import LoginForm from "./pages/LoginForm"; // Form đăng nhập
 import DKForm from "./pages/DKForm"; // Form đăng ký
 
