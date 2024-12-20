@@ -39,7 +39,6 @@ header.scrolled {
     display: flex;
 }
 
-
 /* test */
 .profile-dropdown {
     margin-right: 15px;
@@ -86,7 +85,7 @@ header.scrolled {
 }
 .icon-only {
     margin-right: 20px;
-    font-size: 58px; 
+    font-size: 58px;
     cursor: pointer;
     color: white;
     display: flex;
@@ -105,11 +104,11 @@ header.scrolled {
 }
 
 .icon-only:hover + .profile-dropdown {
-    display: block; 
+    display: block;
 }
 
 .profile-dropdown {
-    display: none; 
+    display: none;
     position: absolute;
     top: 70px; /* Điều chỉnh theo icon */
     right: 0;

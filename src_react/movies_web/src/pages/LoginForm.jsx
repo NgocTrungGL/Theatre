@@ -23,11 +23,12 @@ const LoginForm = ({ setCurrentPage }) => {
             );
 
             if (response.ok) {
+                console.log(username, password)
                 //Admin
-                if (username === "admin" && password === "admin123"){
+                if (username === "admin"){
                     const data = await response.json();
                     console.log("Login successful:", data);
-                    setCurrentPage("admin");
+                    setCurrentPage("admin")
                 }
                 //User thuong
                 else{

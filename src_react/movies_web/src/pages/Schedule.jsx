@@ -39,7 +39,7 @@ function Schedule() {
     const [movies, setMovies] = useState([]);
     const [filters, setFilters] = useState(filterList);
     const fetchData = () => {
-        fetch("http://localhost:3000/data/movieData.json")
+        fetch("http://127.0.0.1:5000/movies")
             .then((res) => res.json())
             .then((data) => setData(data))
             .catch((e) => console.log(e.message));

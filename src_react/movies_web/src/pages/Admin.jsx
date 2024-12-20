@@ -9,18 +9,20 @@ function AdminDashboard() {
     };
 
     const handleDeleteUser = () => {
-        const userId = document.getElementById("delete-user-id").value;
-        const username = document.getElementById("delete-user-username").value;
+        // const userId = document.getElementById("delete-user-id").value;
+        // const username = document.getElementById("delete-user-username").value;
 
-        if (userId && username) {
-            alert(`User with ID: ${userId} and Username: ${username} has been deleted.`);
-        } else {
-            alert("Please provide both User ID and Username to delete the user.");
-        }
+        // if (userId && username) {
+        //     alert(`User with ID: ${userId} and Username: ${username} has been deleted.`);
+        // } else {
+        //     alert("Please provide both User ID and Username to delete the user.");
+        // }
+        
     };
 
     const handleDeleteMovie = () => {
-        alert("Delete Movie");
+        // alert("Delete Movie");
+
     };
 
     return (

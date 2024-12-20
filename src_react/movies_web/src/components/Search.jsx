@@ -1,34 +1,37 @@
-// import React from "react";
-// import "./search.css";
-// function Search() {
-//     return (
-//         <div className="search">
-//             <input type="text" placeholder="Search" />
-//             <ion-icon name="search-outline"></ion-icon>
-//         </div>
-//     );
-// }
-
-// export default Search;
 import React, { useState, useEffect } from "react";
-import Search from "./Search";
 import "./search.css";
 
-function MovieSearchApp() {
+function Search({ onSearch }) {
+    const handleInputChange = (e) => {
+        onSearch(e.target.value);
+    };
+
+    return (
+        <div className="search">
+            <input
+                type="text"
+                placeholder="Search"
+                onChange={handleInputChange}
+            />
+            <ion-icon name="search-outline"></ion-icon>
+        </div>
+    );
+}
+
+function SearchApp() {
     const [movies, setMovies] = useState([]);
     const [filteredMovies, setFilteredMovies] = useState([]);
+    const [isSearching, setIsSearching] = useState(false);
 
     useEffect(() => {
+        // Fetch movie data from API
         const fetchMovies = async () => {
             try {
-                const response = await fetch("http://127.0.0.1:5000/movies"); // Replace with actual API endpoint
-                if (!response.ok) throw new Error("Failed to fetch movies");
+                const response = await fetch("http://127.0.0.1:5000/movies");
                 const data = await response.json();
                 setMovies(data);
-                setFilteredMovies(data);
             } catch (error) {
-                console.error(error);
-                alert("Could not fetch movies. Please try again later.");
+                console.error("Error fetching movies:", error);
             }
         };
         fetchMovies();
@@ -36,8 +39,10 @@ function MovieSearchApp() {
 
     const handleSearch = (query) => {
         if (query.trim() === "") {
-            setFilteredMovies(movies);
+            setFilteredMovies([]);
+            setIsSearching(false);
         } else {
+            setIsSearching(true);
             const lowerCaseQuery = query.toLowerCase();
             const filtered = movies.filter((movie) =>
                 movie.title.toLowerCase().includes(lowerCaseQuery)
@@ -47,29 +52,25 @@ function MovieSearchApp() {
     };
 
     return (
-        <div className="movie-search-app">
-            <h1>Movie Search</h1>
+        <div className={`search-app ${isSearching ? "searching" : ""}`}>
             <Search onSearch={handleSearch} />
-            <div className="movie-list">
-                {filteredMovies.length === 0 ? (
-                    <p>No movies found.</p>
-                ) : (
-                    filteredMovies.map((movie) => (
-                        <div key={movie.movie_id} className="movie-card">
+            {isSearching && <div className="overlay"></div>}
+            {isSearching && filteredMovies.length > 0 ? (
+                <div className="movie-grid">
+                    {filteredMovies.map((movie) => (
+                        <div key={movie.id} className="movie-card">
                             <img
-                                src={movie.titleImg}
+                                src={movie.imageUrl}
                                 alt={movie.title}
                                 className="movie-image"
                             />
-                            <h2>{movie.title}</h2>
-                            <p>{movie.year}</p>
-                            <p>{movie.category}</p>
+                            <div className="movie-title">{movie.title}</div>
                         </div>
-                    ))
-                )}
-            </div>
+                    ))}
+                </div>
+            ) : null}
         </div>
     );
 }
 
-export default MovieSearchApp;
+export default SearchApp;

@@ -1,12 +1,21 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./card.css";
-function Card({ movie }) {
+
+const Card = ({ movie }) => {
+    const navigate = useNavigate();
+
+    const handlePlayClick = () => {
+        // Điều hướng tới trang phát video, truyền thông tin phim qua state
+        navigate(`/movie/${movie._id}`, { state: { movie } });
+    };
+
     return (
         <div className="col-lg-2 col-md-4 col-sm-6">
             <div className="movie-card">
                 <img
                     src={movie.previewImg}
-                    alt="Priview Image"
+                    alt="Preview"
                     className="img-fluid"
                 />
                 <p>
@@ -14,13 +23,17 @@ function Card({ movie }) {
                 </p>
                 <div className="content">
                     <h4>{movie.title}</h4>
-                    <div className="card-icons"></div>
-                    {/* <ion-icon name="add-outline"></ion-icon> */}
-                    <ion-icon name="play-outline"></ion-icon>
+                    <div className="card-icons">
+                        <ion-icon name="add-outline"></ion-icon>
+                        <ion-icon
+                            name="play-outline"
+                            onClick={handlePlayClick}
+                        ></ion-icon>
+                    </div>
                 </div>
             </div>
         </div>
     );
-}
+};
 
 export default Card;
