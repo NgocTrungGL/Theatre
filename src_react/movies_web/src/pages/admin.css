@@ -10,7 +10,7 @@
     font-family: Arial, sans-serif;
     color: #e0e0e0;
     padding: 20px;
-    background-image: url('D:/Code/Theatre/src_react/movies_web/src/img/login_img.jpg');
+    background-image: url("");
     background-repeat: repeat;
     background-position: center;
     height: auto;
@@ -71,10 +71,10 @@
     color: #ffab00;
 }
 
-.form-section input[type="text"], 
-.form-section input[type="email"], 
-.form-section input[type="password"], 
-.form-section input[type="number"], 
+.form-section input[type="text"],
+.form-section input[type="email"],
+.form-section input[type="password"],
+.form-section input[type="number"],
 .form-section textarea {
     width: 100%;
     padding: 12px;
@@ -97,7 +97,7 @@
 
 .form-section button {
     padding: 12px 20px;
-    background-color: #4CAF50;
+    background-color: #4caf50;
     color: #fff;
     border: none;
     border-radius: 6px;
@@ -140,10 +140,10 @@
         font-size: 1.2rem;
     }
 
-    .form-section input[type="text"], 
-    .form-section input[type="email"], 
-    .form-section input[type="password"], 
-    .form-section input[type="number"], 
+    .form-section input[type="text"],
+    .form-section input[type="email"],
+    .form-section input[type="password"],
+    .form-section input[type="number"],
     .form-section textarea {
         font-size: 0.9rem;
     }
@@ -153,7 +153,8 @@
         padding: 10px 18px;
     }
 
-    .form-section, .delete-section {
+    .form-section,
+    .delete-section {
         margin-bottom: 20px;
     }
 }

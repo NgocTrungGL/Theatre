@@ -1,45 +1,49 @@
 import React, { useState } from "react";
 import { FaUser, FaLock } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 import "./LoginForm.css";
 
-const LoginForm = ({ setCurrentPage }) => {
+const LoginForm = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
+    const navigate = useNavigate();
 
     const handleLogin = async (e) => {
-        e.preventDefault();
-        setError(""); // Reset lỗi trước khi gửi yêu cầu
+        e.preventDefault(); // Ngăn chặn hành động mặc định của form
+        setError(""); // Xóa lỗi trước đó
 
         try {
+            // Gửi yêu cầu tới API
             const response = await fetch(
                 "http://localhost:5000/api/users/login",
                 {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ username, password }),
-                    mode: "cors",
                 }
             );
 
             if (response.ok) {
-                console.log(username, password)
-                //Admin
-                if (username === "admin"){
-                    const data = await response.json();
-                    console.log("Login successful:", data);
-                    setCurrentPage("admin")
+                const data = await response.json(); // Lấy dữ liệu từ API
+                const token = data.token; // JWT token từ server
+                const user = data.user; // Thông tin người dùng
+
+                // Kiểm tra dữ liệu hợp lệ trước khi lưu vào sessionStorage
+                if (token && user) {
+                    sessionStorage.setItem("authToken", token);
+                    sessionStorage.setItem("user", JSON.stringify(user));
+
+                    // Chuyển hướng về trang chính
+                    navigate("/");
+                } else {
+                    setError(
+                        "Invalid login response. No token or user data received."
+                    );
                 }
-                //User thuong
-                else{
-                    const data = await response.json();
-                    console.log("Login successful:", data);
-                    setCurrentPage("home"); // Chuyển hướng nếu đăng nhập thành công
-                }
-                
             } else {
                 const errorData = await response.json();
-                setError(errorData.message || "Login failed");
+                setError(errorData.message || "Login failed.");
             }
         } catch (err) {
             setError("Network error. Please try again later.");
