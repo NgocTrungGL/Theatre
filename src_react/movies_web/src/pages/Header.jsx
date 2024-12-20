@@ -18,7 +18,7 @@ function Header({ scroll }) {
     };
 
     const handleBtnOnClick = () => {
-        window.location.href = 'http://localhost:3001/';
+        window.location.href = "http://localhost:3001/";
     };
 
     return (
@@ -28,16 +28,26 @@ function Header({ scroll }) {
             </a>
             <ul className="nav">
                 {navList.map((nav) => (
-                    <NavListItem key={nav._id} nav={nav} navOnClick={handleNavOnClick} />
+                    <NavListItem
+                        key={nav._id}
+                        nav={nav}
+                        navOnClick={handleNavOnClick}
+                    />
                 ))}
             </ul>
             <Search />
             <div className="button-container" onClick={handleBtnOnClick}>
                 {!isButtonClicked ? (
-                    <Button icon={<ion-icon name="log-in-outline"></ion-icon>} name="Sign In" />
+                    <Button
+                        icon={<ion-icon name="log-in-outline"></ion-icon>}
+                        name="Sign In"
+                    />
                 ) : (
                     <div className="icon-only">
-                        <ion-icon name="person-circle-outline" size="extra-large"></ion-icon>
+                        <ion-icon
+                            name="person-circle-outline"
+                            size="extra-large"
+                        ></ion-icon>
                     </div>
                 )}
                 {isButtonClicked && (

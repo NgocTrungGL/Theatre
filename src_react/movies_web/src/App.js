@@ -1,94 +1,64 @@
-// // import boosttrap
-// import "bootstrap/dist/css/bootstrap.min.css";
-// import "swiper/css";
-// import "./App.css";
-
-// import React, {useState, useEffect} from 'react';
-// import './App.css';
-// import Header from "./pages/Header";
-// import Banner from "./pages/Banner";
-// import Main from "./pages/Main";
-// import Footer from './pages/Footer';
-// import BackToTopBtn from "./components/BackToTopBtn";
-
-// function App() {
-//     const [scroll, setScroll] = useState(0);
-
-//     useEffect (() => {
-//         window.addEventListener('scroll', () =>{
-//             setScroll(window.scrollY);
-//         });
-//         return () => {
-//             window.removeEventListener('scroll', () => {
-//                 setScroll(window.scrollY);
-//             });
-//         };
-//     }, [scroll]);
-//     return (
-//         <>
-//             <Header scroll={scroll} />
-//             <Banner />
-//             <Main />
-//             <Footer />
-//             <BackToTopBtn scroll={scroll} />
-//         </>
-//     );
-// }
-
-// export default App;
-
 import "bootstrap/dist/css/bootstrap.min.css";
 import "swiper/css";
 import "./App.css";
 
 import React, { useState, useEffect } from "react";
-import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import Header from "./pages/Header";
 import Banner from "./pages/Banner";
 import Main from "./pages/Main";
 import Footer from "./pages/Footer";
 import BackToTopBtn from "./components/BackToTopBtn";
-
-// Import thêm các trang Login và Register
-import LoginForm from "./pages/LoginForm";
-import DKForm from "./pages/DKForm";
+import VideoPlayerPage from "./pages/VideoPlayerPage"; // Trang phát video
+import LoginForm from "./pages/LoginForm"; // Form đăng nhập
+import DKForm from "./pages/DKForm"; // Form đăng ký
 
 function App() {
-    // const [scroll, setScroll] = useState(0);
-    // const [currentPage, setCurrentPage] = useState("login"); // Trang mặc định là Login
+    const [scroll, setScroll] = useState(0);
+    const [currentPage, setCurrentPage] = useState("login"); // Trang mặc định là login
 
-    // // Quản lý sự kiện cuộn
-    // useEffect(() => {
-    //     const handleScroll = () => setScroll(window.scrollY);
+    // Quản lý sự kiện cuộn
+    useEffect(() => {
+        const handleScroll = () => setScroll(window.scrollY);
+        window.addEventListener("scroll", handleScroll);
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
 
-    //     window.addEventListener("scroll", handleScroll);
-    //     return () => {
-    //         window.removeEventListener("scroll", handleScroll);
-    //     };
-    // }, [scroll]);
-
-    // const renderPage = () => {
-    //     switch (currentPage) {
-    //         case "login":
-    //             return <LoginForm setCurrentPage={setCurrentPage} />;
-    //         case "register":
-    //             return <DKForm setCurrentPage={setCurrentPage} />;
-    //         default:
-    return (
+    const renderMainPage = () => (
         <>
-            {/* <Header scroll={scroll} /> */}
-            <Header />
+            <Header scroll={scroll} />
             <Banner />
             <Main />
             <Footer />
-            {/* <BackToTopBtn scroll={scroll} /> */}
-            <BackToTopBtn />
+            <BackToTopBtn scroll={scroll} />
         </>
     );
-    // }
-}
 
-//     return <>{renderPage()}</>;
-// }
+    const renderAuthPage = () => {
+        if (currentPage === "login") {
+            return <LoginForm setCurrentPage={setCurrentPage} />;
+        }
+        if (currentPage === "register") {
+            return <DKForm setCurrentPage={setCurrentPage} />;
+        }
+        return renderMainPage(); // Trả về trang chính nếu không ở login hoặc register
+    };
+
+    return (
+        <Router>
+            <div className="App">
+                <Routes>
+                    {/* Trang chính */}
+                    <Route path="/" element={renderAuthPage()} />
+                    {/* Trang phát video */}
+                    <Route path="/movie/:id" element={<VideoPlayerPage />} />
+                </Routes>
+            </div>
+        </Router>
+    );
+}
 
 export default App;
