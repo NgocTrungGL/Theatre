@@ -2,7 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "swiper/css";
 import "./App.css";
 
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Header from "./pages/Header";
@@ -11,55 +11,86 @@ import Main from "./pages/Main";
 import Footer from "./pages/Footer";
 import BackToTopBtn from "./components/BackToTopBtn";
 import VideoPlayerPage from "./components/VideoPlayerPage";
-import LoginForm from "./pages/LoginForm"; // Form đăng nhập
-import DKForm from "./pages/DKForm"; // Form đăng ký
-import AdminDashboard from "./pages/Admin";
+import LoginForm from "./pages/LoginForm";
+import Admin from "./pages/Admin";
+import UpdateUserInfo from "./pages/UpdateUserInfo";
 
 function App() {
-    const [scroll, setScroll] = useState(0);
-    const [currentPage, setCurrentPage] = useState("login"); // Trang mặc định là login
+    const [isAuthenticated, setIsAuthenticated] = useState(false); // Trạng thái đăng nhập
 
-    // Quản lý sự kiện cuộn
+    // Kiểm tra trạng thái đăng nhập từ sessionStorage khi khởi động ứng dụng
     useEffect(() => {
-        const handleScroll = () => setScroll(window.scrollY);
-        window.addEventListener("scroll", handleScroll);
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
+        const authToken = sessionStorage.getItem("authToken");
+        setIsAuthenticated(!!authToken); // Chuyển trạng thái dựa trên token
     }, []);
 
-    const renderMainPage = () => (
+    // Xử lý khi người dùng đăng nhập
+    const handleLogin = () => {
+        setIsAuthenticated(true);
+    };
+
+    // Xử lý khi người dùng đăng xuất
+    const handleLogout = () => {
+        setIsAuthenticated(false);
+
+        // Xóa trạng thái khỏi sessionStorage
+        sessionStorage.removeItem("authToken");
+    };
+
+    const MainPage = () => (
         <>
-            <Header scroll={scroll} />
+            <Header />
             <Banner />
             <Main />
             <Footer />
-            <BackToTopBtn scroll={scroll} />
+            <BackToTopBtn />
         </>
     );
-
-
-    const renderAuthPage = () => {
-        if (currentPage === "login") {
-            return <LoginForm setCurrentPage={setCurrentPage} />;
-        }
-        if (currentPage === "register") {
-            return <DKForm setCurrentPage={setCurrentPage} />;
-        }
-        if (currentPage === "admin") {
-            return <AdminDashboard setCurrentPage={setCurrentPage} />;
-        }
-        return renderMainPage(); 
-    };
 
     return (
         <Router>
             <div className="App">
                 <Routes>
+                    {/* Trang đăng nhập */}
+                    <Route
+                        path="/login"
+                        element={<LoginForm onLogin={handleLogin} />}
+                    />
                     {/* Trang chính */}
-                    <Route path="/" element={renderAuthPage()} />
+                    <Route
+                        path="/"
+                        element={
+                            isAuthenticated ? (
+                                <MainPage />
+                            ) : (
+                                <LoginForm onLogin={handleLogin} />
+                            )
+                        }
+                    />
                     {/* Trang phát video */}
                     <Route path="/movie/:id" element={<VideoPlayerPage />} />
+                    {/* Trang admin */}
+                    <Route
+                        path="/admin"
+                        element={
+                            isAuthenticated ? (
+                                <Admin onLogout={handleLogout} />
+                            ) : (
+                                <LoginForm onLogin={handleLogin} />
+                            )
+                        }
+                    />
+                    {/* Trang cập nhật thông tin người dùng */}
+                    <Route
+                        path="/update-user-info"
+                        element={
+                            isAuthenticated ? (
+                                <UpdateUserInfo />
+                            ) : (
+                                <LoginForm onLogin={handleLogin} />
+                            )
+                        }
+                    />
                 </Routes>
             </div>
         </Router>

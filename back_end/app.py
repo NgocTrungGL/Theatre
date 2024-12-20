@@ -6,6 +6,7 @@ from models.user_model import db
 from config import Config
 from controllers.user_controller import user_blueprint
 from flask_cors import CORS
+from flask_jwt_extended import JWTManager
 app = Flask(__name__)
 app.config.from_object(Config)
 db.init_app(app)
@@ -13,6 +14,9 @@ CORS(app)
 # Tạo database ban đầu
 with app.app_context():
     db.create_all()
+
+app.config['JWT_SECRET_KEY'] = 'a3f5e6d7c8b9a0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5'
+jwt = JWTManager(app)
 @app.route('/')
 def hello():
     return "<h1>Xin Chao Ban</h1>"
