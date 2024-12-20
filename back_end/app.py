@@ -36,7 +36,6 @@ def update(user_id):
 @app.route('/user/<int:user_id>', methods=['DELETE'])
 def delete(user_id):
     return delete_user(user_id)
-
 #movie
 @app.route('/movies', methods=['GET'])
 def get_all_movies_route():
