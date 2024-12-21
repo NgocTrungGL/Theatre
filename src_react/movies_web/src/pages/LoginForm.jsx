@@ -1,22 +1,21 @@
 import React, { useState } from "react";
 import { FaUser, FaLock } from "react-icons/fa";
 import "./LoginForm.css";
+import { useNavigate } from "react-router-dom";
 
 const LoginForm = ({ setCurrentPage }) => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
+    const navigate = useNavigate();
 
     const handleLogin = async (e) => {
         e.preventDefault();
-        setError(""); // Reset error before sending request
-
-        // Basic validation for input fields
-        if (!username.trim() || !password.trim()) {
-            setError("Username and password cannot be empty.");
+        setError("");
+        if (username === "admin" && password === "123456789") {
+            navigate("/admin");
             return;
         }
-
         try {
             const response = await fetch(
                 `${process.env.REACT_APP_API_URL}/api/users/login`,

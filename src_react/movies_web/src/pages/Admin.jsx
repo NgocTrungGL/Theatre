@@ -15,6 +15,63 @@ function AdminDashboard() {
         alert('Logged out successfully');
     };
 
+    // 
+    const handleUpdateMovie = async (event) => {
+        event.preventDefault();
+    
+        const formData = new FormData(document.getElementById('update-movie-form'));
+    
+        const getBase64 = (file) => {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onload = () => resolve(reader.result.split(',')[1]);
+                reader.onerror = (error) => reject(error);
+            });
+        };
+    
+        try {
+            const movieId = formData.get('movieId'); // Lấy ID phim cần cập nhật
+            const titleImg = formData.get('titleImg');
+            const bgImg = formData.get('bgImg');
+            const previewImg = formData.get('previewImg');
+    
+            const data = {
+                title: formData.get('title'),
+                video: formData.get('video'),
+                year: formData.get('year'),
+                date: formData.get('release-date'),
+                ageLimit: formData.get('age-limit'),
+                length: formData.get('length'),
+                category: formData.get('category'),
+                description: formData.get('description'),
+                type: formData.get('status'),
+                titleImg: titleImg ? await getBase64(titleImg) : null,
+                bgImg: bgImg ? await getBase64(bgImg) : null,
+                previewImg: previewImg ? await getBase64(previewImg) : null,
+            };
+    
+            const response = await fetch(`http://localhost:5000/movies/${movieId}`, {
+                method: 'PUT',
+                body: JSON.stringify(data),
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
+    
+            if (response.ok) {
+                alert('Phim đã được cập nhật thành công!');
+            } else {
+                const result = await response.json();
+                alert(result.message || 'Cập nhật phim thất bại!');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('Đã xảy ra lỗi khi cập nhật phim: ' + error.message);
+        }
+    };
+    
+    // 
 function handleDeleteUser(event) {
     event.preventDefault();
     const userId = event.target.user_id.value;
@@ -230,6 +287,41 @@ const handleAddMovie = async (event) => {
                                     </select>
                                 </div>
                                 <button type="submit">Thêm Phim</button>
+                            </form>
+
+                            <form onSubmit={handleUpdateMovie} id="update-movie-form">
+                                <div className="input-group">
+                                    <label htmlFor="movieId">ID Phim</label>
+                                    <input type="number" id="movieId" name="movieId" placeholder="ID Phim" required />
+                                </div>
+                                <div className="input-group">
+                                    <label htmlFor="title">Tiêu Đề Phim</label>
+                                    <input type="text" id="title" name="title" placeholder="Tiêu Đề Phim" />
+                                </div>
+                                <div className="input-group">
+                                    <label htmlFor="titleImg">Ảnh Tiêu Đề</label>
+                                    <input type="file" id="titleImg" name="titleImg" accept="image/*" />
+                                </div>
+                                <div className="input-group">
+                                    <label htmlFor="bgImg">Ảnh Nền</label>
+                                    <input type="file" id="bgImg" name="bgImg" accept="image/*" />
+                                </div>
+                                <div className="input-group">
+                                    <label htmlFor="previewImg">Ảnh Xem Trước</label>
+                                    <input type="file" id="previewImg" name="previewImg" accept="image/*" />
+                                </div>
+                                <div className="input-group">
+                                    <label htmlFor="video">URL Video</label>
+                                    <input type="text" id="video" name="video" placeholder="URL Video" />
+                                </div>
+                                <div className="input-group">
+                                    <label htmlFor="status">Trạng Thái</label>
+                                    <select id="status" name="status">
+                                        <option value="coming">Coming</option>
+                                        <option value="released">Released</option>
+                                    </select>
+                                </div>
+                                <button type="submit">Cập Nhật Phim</button>
                             </form>
                         </section>
 

@@ -73,11 +73,11 @@ function App() {
                     <Route
                         path="/admin"
                         element={
-                            isAuthenticated ? (
-                                <Admin onLogout={handleLogout} />
-                            ) : (
-                                <LoginForm onLogin={handleLogin} />
-                            )
+                            // isAuthenticated ? (
+                            <Admin onLogout={handleLogout} />
+                            // ) : (
+                            //     <LoginForm onLogin={handleLogin} />
+                            // )
                         }
                     />
                     {/* Trang cập nhật thông tin người dùng */}

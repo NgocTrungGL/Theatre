@@ -3,10 +3,11 @@ USE cinema;
 
 CREATE TABLE Movies (
 	movie_id INT AUTO_INCREMENT PRIMARY KEY NOT NULL, -- Mã định danh tự động tăng
-    titleImg BLOB, -- Đường dẫn ảnh tiêu đề
-    bgImg BLOB, -- Đường dẫn ảnh nền
-    previewImg BLOB, -- Đường dẫn ảnh xem trước
-    video VARCHAR(255), -- URL video (trailer hoặc phim)
+    titleImg MEDIUMBLOB, -- Đường dẫn ảnh tiêu đề
+    bgImg MEDIUMBLOB, -- Đường dẫn ảnh nền
+    previewImg MEDIUMBLOB, -- Đường dẫn ảnh xem trước
+    trailer VARCHAR(255), -- URL video (trailer)
+    video VARCHAR(255), -- URL video (phim)
     title VARCHAR(100), -- Tiêu đề phim
     year YEAR, -- Năm phát hành
     date VARCHAR(50), -- Ngày phát hành
