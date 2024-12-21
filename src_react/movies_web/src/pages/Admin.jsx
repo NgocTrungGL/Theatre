@@ -29,7 +29,6 @@ function AdminDashboard() {
                 reader.onerror = (error) => reject(error);
             });
         };
-    
         try {
             const movieId = formData.get('movieId'); // Lấy ID phim cần cập nhật
             const titleImg = formData.get('titleImg');
@@ -50,7 +49,8 @@ function AdminDashboard() {
                 bgImg: bgImg ? await getBase64(bgImg) : null,
                 previewImg: previewImg ? await getBase64(previewImg) : null,
             };
-    
+            
+            console.log('Form Data:', data);
             const response = await fetch(`http://localhost:5000/movies/${movieId}`, {
                 method: 'PUT',
                 body: JSON.stringify(data),
