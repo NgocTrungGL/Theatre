@@ -1,197 +1,204 @@
-/* Admin Dashboard Container */
 .admin-dashboard {
     font-family: Arial, sans-serif;
-    color: #e0e0e0;
-    padding: 20px;
-    background-image: url("");
-    background-repeat: repeat;
-    background-position: center;
-    height: auto;
-    margin: 0;
+    background: #1c1c1c;
+    color: white;
+    min-height: 100vh;
 }
 
-/* Navbar Styling */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    background: #007bff;
     padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
 }
 
 .navbar .logout-button {
-    background-color: #ff4d4d;
+    background: #dc3545;
     color: white;
     border: none;
-    border-radius: 4px;
+    padding: 10px 20px;
+    border-radius: 5px;
     cursor: pointer;
+}
+
+.navbar .nav-left button {
+    background: white;
+    color: #007bff;
+    border: none;
     padding: 10px 15px;
+    margin-right: 10px;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-.navbar .logout-button:hover {
-    background-color: #cc0000;
-}
-
-.navbar .nav-left {
+.content1 {
+    padding: 20px;
     display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.movie-section {
+    background: #333;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.movie-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.controls input,
+.controls button {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: white;
+    color: #1c1c1c;
+    cursor: pointer;
+}
+
+.controls button {
+    background: #007bff;
+    color: white;
+    border: none;
+}
+
+.movie-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.movie-form input,
+.movie-form textarea,
+.movie-form button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.movie-form textarea {
+    height: 100px;
+}
+
+.movie-form button {
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.movie-form button:hover {
+    background: #0056b3;
+}
+
+/* Quản lý người dùng */
+.admin-section {
+    padding: 20px;
+    background-color: #333; /* Nền tối */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Tăng độ mờ của bóng */
+    color: #f1f1f1; /* Màu chữ sáng */
+}
+
+.admin-section h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #f1f1f1; /* Chữ sáng */
+}
+
+/* Các phần con trong admin section */
+.admin-section > div {
+    margin-bottom: 30px;
+}
+
+/* Danh sách người dùng */
+.admin-section h2 {
+    font-size: 20px;
+    color: #e0e0e0; /* Màu chữ sáng nhưng ít nổi hơn */
+    margin-bottom: 10px;
+}
+
+.admin-section p {
+    font-size: 16px;
+    color: #b3b3b3; /* Màu chữ mờ hơn một chút */
+}
+
+/* Form xóa người dùng */
+.form-delete-user {
+    display: flex;
+    flex-direction: column;
     gap: 10px;
 }
 
-.navbar button {
-    padding: 10px 15px;
-    background-color: #0056b3;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.navbar button:hover {
-    background-color: #003f7f;
-}
-
-/* Admin Section Styling */
-.admin-section {
-    padding: 20px;
-    background-color: rgba(153, 150, 150, 0.8);
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
-}
-
-/* Section Titles */
-.admin-section .section-title {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-.admin-section .sub-title {
-    font-size: 20px;
-    margin-top: 20px;
-    color: #555;
-}
-
-/* Form Styling */
-.form-section {
-    margin-bottom: 30px;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-}
-
-.form-section h2 {
-    font-size: 1.6rem;
-    margin-bottom: 15px;
-    color: #ffab00;
-}
-
-.form-section .input-group {
-    margin-bottom: 15px;
-}
-
-.form-section .input-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-}
-
-.form-section .input-group input,
-.form-section .input-group textarea {
-    width: 100%;
-    padding: 10px;
+.form-delete-user label {
     font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    color: #f1f1f1; /* Màu chữ sáng */
 }
 
-.form-section .input-group input:focus,
-.form-section .input-group textarea:focus {
-    outline: none;
-    border-color: #007bff;
-    box-shadow: 0 0 3px rgba(0, 123, 255, 0.5);
-}
-
-/* Buttons Inside Form Section */
-.form-section .submit-button {
-    padding: 12px 20px;
-    background-color: #4caf50;
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.form-section .submit-button:hover {
-    background-color: #45a049;
-}
-
-/* Update Movie Form Specific */
-.update-section {
-    padding: 15px;
-    margin-top: 20px;
-    border: 1px solid #444;
-    background-color: #f0f0f0;
-    border-radius: 8px;
-}
-
-.update-section h2 {
-    font-size: 1.5rem;
-    color: #007bff;
-    margin-bottom: 15px;
-}
-
-.update-section .input-group {
-    margin-bottom: 15px;
-}
-
-.update-section .input-group label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.update-section .input-group input {
+.form-delete-user input {
     padding: 10px;
-    width: 100%;
-    border: 1px solid #ccc;
+    border: 1px solid #555; /* Biên tối */
     border-radius: 4px;
+    font-size: 14px;
+    background-color: #444; /* Nền input tối */
+    color: #f1f1f1; /* Chữ sáng */
 }
 
-.update-section .update-button {
+.form-delete-user button {
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: #ff4747; /* Màu đỏ sáng */
     color: white;
     border: none;
     border-radius: 4px;
-    font-size: 1rem;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-size: 16px;
 }
 
-.update-section .update-button:hover {
-    background-color: #0056b3;
+.form-delete-user button:hover {
+    background-color: #e63946; /* Đỏ tối hơn khi hover */
 }
 
-/* Media Queries for Responsive Design */
-@media (max-width: 768px) {
-    .admin-dashboard {
-        padding: 15px;
-    }
+/* Form cập nhật người dùng */
+.form-update-user {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 
-    .form-section h2,
-    .update-section h2 {
-        font-size: 1.2rem;
-    }
+.form-update-user input {
+    padding: 10px;
+    border: 1px solid #555; /* Biên tối */
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: #444; /* Nền input tối */
+    color: #f1f1f1; /* Chữ sáng */
+}
 
-    .form-section .submit-button,
-    .update-section .update-button {
-        font-size: 0.9rem;
-        padding: 10px 15px;
-    }
+.form-update-user button {
+    padding: 10px 20px;
+    background-color: #4caf50; /* Màu xanh lá cây */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.form-update-user button:hover {
+    background-color: #45a049; /* Xanh lá cây tối hơn khi hover */
 }

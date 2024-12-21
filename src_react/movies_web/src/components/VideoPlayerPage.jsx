@@ -25,7 +25,7 @@ const VideoPlayerPage = () => {
             </button>
             <div className="player-wrapper">
                 <ReactPlayer
-                    url={movie.video}
+                    url={movie.trailer}
                     controls
                     width="100%"
                     height="100%"

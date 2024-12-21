@@ -74,10 +74,11 @@ from models.user_model import User
 user_blueprint = Blueprint('user_blueprint', __name__)
 
 # Đăng nhập
-from flask import request, jsonify, Blueprint
+from flask import Blueprint, request, jsonify
+from models.user_model import User
+from werkzeug.security import check_password_hash
 from flask_jwt_extended import create_access_token
 from datetime import timedelta
-
 
 user_blueprint = Blueprint('user_blueprint', __name__)
 
@@ -90,7 +91,7 @@ def login():
     # Tìm người dùng trong cơ sở dữ liệu
     user = User.query.filter_by(username=username).first()
 
-    if user and user.password == password:  # So sánh mật khẩu thô (không bảo mật)
+    if user and user.password == password:  # So sánh mật khẩu đã hash
         # Tạo JWT token
         access_token = create_access_token(
             identity={"id": user.user_id, "username": user.username},

@@ -23,7 +23,7 @@ function MovieContent({ movie }) {
             </h4>
             <p>{movie.description}</p>
             <div className="button">
-                <Button
+                {/* <Button
                     icon={<ion-icon name="bookmark-outline"></ion-icon>}
                     name="Book"
                     color="#ff3700"
@@ -32,7 +32,7 @@ function MovieContent({ movie }) {
                 <Button
                     icon={<ion-icon name="add-outline"></ion-icon>}
                     name="My List"
-                />
+                /> */}
             </div>
         </div>
     );

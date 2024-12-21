@@ -1,24 +1,25 @@
 import React, { useState } from "react";
 import { FaUser, FaLock } from "react-icons/fa";
-import "./LoginForm.css";
 import { useNavigate } from "react-router-dom";
+import "./LoginForm.css";
 
-const LoginForm = ({ setCurrentPage }) => {
+const LoginForm = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
     const navigate = useNavigate();
 
     const handleLogin = async (e) => {
-        e.preventDefault();
-        setError("");
-        if (username === "admin" && password === "123456789") {
-            navigate("/admin");
-            return;
-        }
+        e.preventDefault(); // Ngăn chặn hành động mặc định của form
+        setError(""); // Clear previous error
+
         try {
+            if (username === "admin" && password === "123456") {
+                navigate("/admin");
+                return;
+            }
             const response = await fetch(
-                `${process.env.REACT_APP_API_URL}/api/users/login`,
+                "http://localhost:5000/api/users/login",
                 {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
@@ -29,17 +30,28 @@ const LoginForm = ({ setCurrentPage }) => {
 
             if (response.ok) {
                 const data = await response.json();
-                console.log("Login successful:", data);
+                const token = data.token;
+                const user = data.user;
 
-                // Redirect based on server response role
-                if (data.role === "admin") {
-                    setCurrentPage("admin");
+                if (token && user) {
+                    // Store the token and user in sessionStorage
+                    sessionStorage.setItem("authToken", token);
+                    sessionStorage.setItem("user", JSON.stringify(user));
+                    console.log("Login successful:", data);
+                    // Redirect to the home page after successful login
+                    navigate("/");
                 } else {
-                    setCurrentPage("home");
+                    setError(
+                        "Invalid login response. No token or user data received."
+                    );
                 }
             } else {
                 const errorData = await response.json();
-                setError(errorData.message || "Login failed.");
+                console.error("Error from server:", errorData); // Log server response for debugging
+                setError(
+                    errorData.message ||
+                        "Login failed. Please check your credentials."
+                );
             }
         } catch (err) {
             setError("Network error. Please try again later.");
