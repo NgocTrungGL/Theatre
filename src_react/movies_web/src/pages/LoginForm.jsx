@@ -1,45 +1,42 @@
 import React, { useState } from "react";
 import { FaUser, FaLock } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
 import "./LoginForm.css";
 
-const LoginForm = () => {
+const LoginForm = ({ setCurrentPage }) => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
-    const navigate = useNavigate();
 
     const handleLogin = async (e) => {
-        e.preventDefault(); // Ngăn chặn hành động mặc định của form
-        setError(""); // Xóa lỗi trước đó
+        e.preventDefault();
+        setError(""); // Reset error before sending request
+
+        // Basic validation for input fields
+        if (!username.trim() || !password.trim()) {
+            setError("Username and password cannot be empty.");
+            return;
+        }
 
         try {
-            // Gửi yêu cầu tới API
             const response = await fetch(
-                "http://localhost:5000/api/users/login",
+                `${process.env.REACT_APP_API_URL}/api/users/login`,
                 {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ username, password }),
+                    mode: "cors",
                 }
             );
 
             if (response.ok) {
-                const data = await response.json(); // Lấy dữ liệu từ API
-                const token = data.token; // JWT token từ server
-                const user = data.user; // Thông tin người dùng
+                const data = await response.json();
+                console.log("Login successful:", data);
 
-                // Kiểm tra dữ liệu hợp lệ trước khi lưu vào sessionStorage
-                if (token && user) {
-                    sessionStorage.setItem("authToken", token);
-                    sessionStorage.setItem("user", JSON.stringify(user));
-
-                    // Chuyển hướng về trang chính
-                    navigate("/");
+                // Redirect based on server response role
+                if (data.role === "admin") {
+                    setCurrentPage("admin");
                 } else {
-                    setError(
-                        "Invalid login response. No token or user data received."
-                    );
+                    setCurrentPage("home");
                 }
             } else {
                 const errorData = await response.json();

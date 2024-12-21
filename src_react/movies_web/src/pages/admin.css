@@ -1,9 +1,4 @@
 .admin-dashboard {
-<<<<<<< HEAD
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-=======
     font-family: Arial, sans-serif;
     color: #e0e0e0;
     padding: 20px;
@@ -12,7 +7,7 @@
     background-position: center;
     height: auto;
     margin: 0;
->>>>>>> 13a35e46057483913bed174a817f657c36ad6aba
+/* >>>>>>> 13a35e46057483913bed174a817f657c36ad6aba */
 }
 
 .navbar {
@@ -90,9 +85,6 @@
     font-weight: bold;
 }
 
-<<<<<<< HEAD
-.admin-section input {
-=======
 .admin-section h1 {
     text-align: center;
     margin-bottom: 30px;
@@ -114,7 +106,7 @@
 .form-section input[type="password"],
 .form-section input[type="number"],
 .form-section textarea {
->>>>>>> 13a35e46057483913bed174a817f657c36ad6aba
+/* >>>>>>> 13a35e46057483913bed174a817f657c36ad6aba */
     width: 100%;
     padding: 8px;
     margin-bottom: 10px;
@@ -145,10 +137,6 @@
 }
 
 .form-section button {
-<<<<<<< HEAD
-    margin-top: 20px;
-}
-=======
     padding: 12px 20px;
     background-color: #4caf50;
     color: #fff;
@@ -211,4 +199,4 @@
         margin-bottom: 20px;
     }
 }
->>>>>>> 13a35e46057483913bed174a817f657c36ad6aba
+/* >>>>>>> 13a35e46057483913bed174a817f657c36ad6aba */
