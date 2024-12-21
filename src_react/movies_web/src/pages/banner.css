@@ -99,3 +99,39 @@
         filter: blur(10px);
     }
 }
+
+/* banner.css */
+.banner {
+    position: relative;
+    overflow: hidden; /* Ẩn các phần tử ngoài vùng hiển thị */
+}
+
+.movie {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* Mặc định ẩn các phim */
+    transition: opacity 0.5s ease-in-out; /* Hiệu ứng chuyển đổi mượt mà */
+}
+
+.movie.active-movie {
+    opacity: 1; /* Chỉ phim active mới có opacity là 1 */
+    z-index: 1; /* Đảm bảo phim active nằm trên cùng */
+}
+
+.bgImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Đảm bảo ảnh nền không bị méo */
+}
+
+.bgImg.active {
+    opacity: 1; /* Hiển thị ảnh nền của phim active */
+}
+
+.bgImg {
+    opacity: 0; /* Ẩn ảnh nền của phim không active */
+    transition: opacity 0.5s ease-in-out;
+}

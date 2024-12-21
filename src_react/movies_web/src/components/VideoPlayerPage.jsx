@@ -17,7 +17,6 @@ const VideoPlayerPage = () => {
             </div>
         );
     }
-
     return (
         <div className="video-player-page">
             <button className="back-button" onClick={() => navigate("/")}>

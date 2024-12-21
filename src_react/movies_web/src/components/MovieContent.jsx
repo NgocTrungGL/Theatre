@@ -9,7 +9,7 @@ function MovieContent({ movie }) {
     return (
         <div className={`content ${movie.active ? "active" : undefined}`}>
             <img
-                src={movie.titleImg}
+                src={`data:image/jpeg;base64,${movie.titleImg}`}
                 alt="Movie-title"
                 className="movie-title"
             />
