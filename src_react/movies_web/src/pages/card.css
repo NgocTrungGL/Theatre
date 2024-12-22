@@ -5,6 +5,7 @@ section .movie-card {
     background: #000000 !important;
     box-shadow: 0 0 16 rgba(255, 255, 255, 0.5);
     transition: 0.5s;
+    margin: 15px 15px;
 }
 
 section .movie-card::before {
@@ -26,7 +27,7 @@ section .movie-card p {
     font-size: 1rem;
     font-weight: 400;
     text-align: center;
-    padding: 10px 0;
+    padding: 10px 0px;
 }
 
 section .movie-card .content {
