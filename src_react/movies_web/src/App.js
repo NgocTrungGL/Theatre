@@ -12,6 +12,7 @@ import Footer from "./pages/Footer";
 import BackToTopBtn from "./components/BackToTopBtn";
 import VideoPlayerPage from "./components/VideoPlayerPage";
 import LoginForm from "./pages/LoginForm";
+import DKForm from "./pages/DKForm";
 import Admin from "./pages/Admin";
 import UpdateUserInfo from "./pages/UpdateUserInfo";
 
@@ -37,6 +38,10 @@ function App() {
         sessionStorage.removeItem("authToken");
     };
 
+    const handleDK = () => {
+        setIsAuthenticated(true);
+    }
+
     const MainPage = () => (
         <>
             <Header />
@@ -55,6 +60,10 @@ function App() {
                     <Route
                         path="/login"
                         element={<LoginForm onLogin={handleLogin} />}
+                    />
+                    <Route
+                        path="/signup"
+                        element={<DKForm onRegister={handleDK} />}
                     />
                     {/* Trang chính */}
                     <Route

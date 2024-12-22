@@ -83,6 +83,11 @@ const LoginForm = () => {
                     <FaLock className="icon" />
                 </div>
                 {error && <p className="error">{error}</p>}
+                <div className="account-link sign">
+                    <a href="/signup">
+                        Sign Up
+                    </a>
+                </div>
                 <button type="submit">Login</button>
             </form>
         </div>
