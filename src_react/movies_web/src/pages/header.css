@@ -9,7 +9,7 @@ header {
     padding: 30px 100px;
     transition: 0.5s;
     z-index: 10000;
-    height: 80px;
+    /* height: 80px; */
 }
 
 header.scrolled {
