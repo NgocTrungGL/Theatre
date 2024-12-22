@@ -94,9 +94,11 @@ function Schedule() {
                 <div className="row mt-5">
                     {movies &&
                         movies.length > 0 &&
-                        movies.map((movie) => (
-                            <Card key={movie._id} movie={movie} />
-                        ))}
+                        movies
+                            .filter((movie) => movie.type === "released")
+                            .map((movie) => (
+                                <Card key={movie._id} movie={movie} />
+                            ))}
                 </div>
             </div>
         </section>

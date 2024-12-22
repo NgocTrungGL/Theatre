@@ -4,7 +4,10 @@ import "./trendCard.css";
 function TrendCard({ slide }) {
     return (
         <div className="trend-card">
-            <img className="img-fluid" src={slide.previewImg} />
+            <img
+                className="img-fluid"
+                src={`data:image/jpeg;base64,${slide.previewImg}`}
+            />
             {/* <a href="#"> */}
             {/* Add to calendar <ion-icon name="calendar-outline"></ion-icon> */}
             {/* </a> */}

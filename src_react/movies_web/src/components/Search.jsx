@@ -59,11 +59,6 @@ function SearchApp() {
                 <div className="movie-grid">
                     {filteredMovies.map((movie) => (
                         <div key={movie.id} className="movie-card">
-                            {/* <img
-                                src={movie.title}
-                                alt={movie.title}
-                                className="movie-image"
-                            /> */}
                             <img
                                 src={`data:image/jpeg;base64,${movie.titleImg}`} // Thêm prefix `data:image/...`
                                 alt={movie.title}
