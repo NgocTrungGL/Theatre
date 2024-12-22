@@ -421,7 +421,7 @@ function AdminDashboard() {
                         </div>
                         <div>
                             <h2>Cập nhật người dùng</h2>
-                            <form onSubmit={handleUpdateUser}>
+                            {/* <form onSubmit={handleUpdateUser}>
                                 <label>
                                     ID người dùng:
                                     <input
@@ -451,6 +451,49 @@ function AdminDashboard() {
                                     />
                                 </label>
                                 <button type="submit">Cập nhật</button>
+                            </form> */}
+                            <form onSubmit={handleUpdateUser} className="admin-form">
+                                <div className="admin-group">
+                                    <label className="admin-label" htmlFor="user_id">ID người dùng:</label>
+                                    <input
+                                        type="number"
+                                        name="user_id"
+                                        id="user_id"
+                                        className="admin-input"
+                                        required
+                                    />
+                                </div>
+                                <div className="admin-group">
+                                    <label className="admin-label" htmlFor="username">Tên người dùng:</label>
+                                    <input
+                                        type="text"
+                                        name="username"
+                                        id="username"
+                                        className="admin-input"
+                                        required
+                                    />
+                                </div>
+                                <div className="admin-group">
+                                    <label className="admin-label" htmlFor="email">Email:</label>
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        id="email"
+                                        className="admin-input"
+                                        required
+                                    />
+                                </div>
+                                <div className="admin-group">
+                                    <label className="admin-label" htmlFor="password">Mật khẩu:</label>
+                                    <input
+                                        type="password"
+                                        name="password"
+                                        id="password"
+                                        className="admin-input"
+                                        required
+                                    />
+                                </div>
+                                <button type="submit" className="admin-button">Cập nhật</button>
                             </form>
                         </div>
                     </section>

@@ -202,3 +202,95 @@
 .form-update-user button:hover {
     background-color: #45a049; /* Xanh lá cây tối hơn khi hover */
 }
+
+/* CSS trang trí phần Quản lý Người dùng */
+
+.admin-section {
+    padding: 20px;
+    background-color: #373030;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+.admin-section .admin-header {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.admin-section .section-header {
+    color: #555;
+    font-size: 20px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+}
+
+.admin-section .admin-block {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.admin-section .admin-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-section .admin-form .admin-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-section .admin-form .admin-label {
+    font-size: 16px;
+    color: #ffffff;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.admin-section .admin-form .admin-input {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 5px;
+    outline: none;
+    transition: border-color 0.3s;
+    width: 100%;
+}
+
+.admin-section .admin-form .admin-input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.admin-section .admin-form .admin-button {
+    padding: 10px 15px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.admin-section .admin-form .admin-button:hover {
+    background-color: #0056b3;
+}
+
+.admin-section .admin-form .admin-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.admin-section .admin-block:last-child {
+    margin-bottom: 0;
+}
