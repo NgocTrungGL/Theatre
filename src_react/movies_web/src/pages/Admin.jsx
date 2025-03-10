@@ -14,7 +14,7 @@ function AdminDashboard() {
     };
 
     const handleLogout = () => {
-        navigate("/");
+        navigate("/login");
         alert("Logged out successfully");
     };
 
