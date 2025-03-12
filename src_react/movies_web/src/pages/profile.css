@@ -1,0 +1,15 @@
+.profile-container {
+    background-image: url('../img/login_img.jpg') ;
+    background-size: cover ;
+    background-position: center ;
+    height: 100vh ;
+    width: 100% ;
+    color: white;
+    margin: 20px;
+    padding: 20px;
+}
+
+.user-img {
+    width: 150px;
+    height: 150px;
+}

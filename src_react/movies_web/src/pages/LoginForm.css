@@ -1,6 +1,9 @@
+
+
 .wrapper h1 {
     font-size: 36px;
     text-align: center;
+    
 }
 
 .wrapper .input-box {
@@ -100,7 +103,10 @@
     color: #fff;
     border-radius: 10px;
     padding: 30px 40px;
+    background-image: url('../img/login_img.jpg')
 }
+
+
 .sign {
     display: block; /* Chuyển <a> thành khối để dễ căn chỉnh */
     text-align: right; /* Căn chữ về bên trái (nếu vùng chứa có độ rộng cố định) */

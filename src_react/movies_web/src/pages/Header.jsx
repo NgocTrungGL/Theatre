@@ -74,7 +74,9 @@ function Header({ scroll }) {
                 <div className="profile-dropdown">
                     <div className="dropdown-divider"></div>
                     <ul className="menu-options">
-                        <li onClick={handleAccountClick}>Tài khoản</li>
+                        <li onClick={() => {
+                            navigate('/profile')
+                        }}>Tài khoản</li>
                         <li>Trung tâm trợ giúp</li>
                         <div className="dropdown-divider"></div>
                         <li className="logout" onClick={handleLogout}>

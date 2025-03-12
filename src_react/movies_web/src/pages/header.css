@@ -111,7 +111,7 @@ header.scrolled {
 .profile-dropdown {
     display: none;
     position: absolute;
-    top: 70px; /* Điều chỉnh theo icon */
+    top: 55px; /* Điều chỉnh theo icon */
     right: 0;
     background-color: #141414;
     border: 1px solid #333;

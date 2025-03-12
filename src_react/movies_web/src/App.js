@@ -15,6 +15,7 @@ import LoginForm from "./pages/LoginForm";
 import DKForm from "./pages/DKForm";
 import Admin from "./pages/Admin";
 import UpdateUserInfo from "./pages/UpdateUserInfo";
+import Profile from "./pages/Profile"
 
 function App() {
     const [isAuthenticated, setIsAuthenticated] = useState(false); // Trạng thái đăng nhập
@@ -43,13 +44,13 @@ function App() {
     }
 
     const MainPage = () => (
-        <>
+        <div className="main-page-container">
             <Header />
             <Banner />
             <Main />
             <Footer />
             <BackToTopBtn />
-        </>
+    </div>
     );
 
     return (
@@ -93,6 +94,11 @@ function App() {
                                 <LoginForm onLogin={handleLogin} />
                             )
                         }
+                    />
+                    {/* Trang tt cá nhân */}
+                    <Route
+                        path="/profile"
+                        element = {<Profile/>}
                     />
                 </Routes>
             </div>
